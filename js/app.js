@@ -27,6 +27,24 @@ $(document).ready(function(){
     });
     // End info section
 
+     // Start ADV Section 
+     $("#videos").click(function(){
+        var getmodal = $(this).data("bs-target");
+        var getvideosrc = $(this).data("video");
+        var videourlwithauto = getvideosrc +"?autoplay=1";
+
+        $(getmodal + " iframe").attr("src",videourlwithauto);   
+
+        $(getmodal + " button.btn-close").click(function(){
+            $(getmodal + " iframe").attr("src",getvideosrc);
+        });
+
+        $(getmodal).click("hidden.bs.modal",function(){
+            $(getmodal + " iframe").attr("src",getvideosrc);
+        });
+    })
+    // End ADV Section 
+
     //Start Premises Section
 
     //Start lightslider
@@ -94,7 +112,20 @@ $(document).ready(function(){
         //     "background":`conic-gradient(steelblue ${getfinalheight}%,#eee ${getfinalheight}%)`
         // })
 // ----------------------------------------------------------------
+    // By Javascript 
 
+        var getscrollheight = document.documentElement.scrollHeight;
+        // console.log(getscrollheight);
+        var getclientheight = document.documentElement.clientHeight;
+        // console.log(getclientheight);
+        var calcheight = getscrollheight - getclientheight;
+        var getfinalheight = Math.round(getscrolltop * 100 / calcheight);
+        // console.log(getfinalheight);
+
+        getprogressval.text(`${getfinalheight}%`);
+        getprogress.css({
+            "background":`conic-gradient(steelblue ${getfinalheight}%,#eee ${getfinalheight}%)`
+        });
 
     });
     // End Progress
