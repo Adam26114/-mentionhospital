@@ -63,4 +63,32 @@ $(document).ready(function(){
     $('#accordion').accordion();
     // End Join Us Section
 
+    // Start Footer Section
+    $('#getyear').text(new Date().getUTCFullYear());
+    
+    // End Footer Section
+
+    // Start Progress 
+    $(window).scroll(function(){
+        var getprogress = $("#progresses"); 
+        var getprogressval = $("#progressvalues");
+        var getscrolltop = $(this).scrollTop();
+        // console.log(getscrolltop);
+
+       
+        var getscrollheight = $(document).height();
+        console.log(getscrollheight);
+        var getclientheight = $(window).height();
+        console.log(getclientheight);
+         
+        var calcheight = getscrollheight - getclientheight;
+        var getfinalheight = Math.round(getscrolltop * 100 / calcheight)
+
+        getprogressval.text(`${getfinalheight}%`)
+        // st * 100 / (pj height - cvheight)
+        
+    });
+    // End Progress
+
+
 });
