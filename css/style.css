@@ -336,3 +336,12 @@ td{
     padding:30px;
 }
 /* End Join Us Section */
+
+/* Start Footer */
+.socialicons a{
+    color:#fff;
+    border:1px solid #f4f4f4;
+    padding:5px ;
+    margin:0 5px;
+}
+/* End Footer */
