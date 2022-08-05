@@ -75,18 +75,27 @@ $(document).ready(function(){
         var getscrolltop = $(this).scrollTop();
         // console.log(getscrolltop);
 
-       
-        var getscrollheight = $(document).height();
-        console.log(getscrollheight);
-        var getclientheight = $(window).height();
-        console.log(getclientheight);
-         
-        var calcheight = getscrollheight - getclientheight;
-        var getfinalheight = Math.round(getscrolltop * 100 / calcheight)
+// ----------------------------------------------------------------
+    // By Jquery
 
-        getprogressval.text(`${getfinalheight}%`)
-        // st * 100 / (pj height - cvheight)
-        
+        // // st * 100 / (pj height - cvheight)
+    
+        // var getscrollheight = $(document).height();
+        // console.log(getscrollheight);
+        // var getclientheight = $(window).height();
+        // console.log(getclientheight);
+         
+        // var calcheight = getscrollheight - getclientheight;
+        // var getfinalheight = Math.round(getscrolltop * 100 / calcheight)
+
+        // getprogressval.text(`${getfinalheight}%`)
+
+        // getprogress.css({
+        //     "background":`conic-gradient(steelblue ${getfinalheight}%,#eee ${getfinalheight}%)`
+        // })
+// ----------------------------------------------------------------
+
+
     });
     // End Progress
 
